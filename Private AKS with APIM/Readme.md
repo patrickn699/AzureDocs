@@ -57,10 +57,14 @@ you should get the following output for deployments and service.
       kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.crds.yaml
       # Install the cert-manager Helm chart
       helm install cert-manager jetstack/cert-manager --namespace ingress-basic --version v1.7.1
+      # List the installed charts
       helm list
+      # verify if certmanager is installed
+       kubectl get deployments && kubectl get svc
      ```
 
     * ![helm](./images/helm1.png)
+    * ![helm](./images/certm1.png)
      
   
 
