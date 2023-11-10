@@ -43,6 +43,25 @@ you should get the following output for deployments and service.
     * If everything is correctly installed you should be able to access it using the private ip of the ingress.
   
     * ![op_deployments](./images/op1.png)
+
+
+4. Install certmanager in the cluster
+   * Now we are good to go for installing cert manager on the aks, run the below command.
+   * ```kubectl
+      kubectl label namespace ingress-basic cert-manager.io/disable-validation=true
+      # Add the Jetstack Helm repository
+      helm repo add jetstack https://charts.jetstack.io
+      # Update your local Helm chart repository cache
+      helm repo update
+      # Install CRDs with kubectl
+      kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.crds.yaml
+      # Install the cert-manager Helm chart
+      helm install cert-manager jetstack/cert-manager --namespace ingress-basic --version v1.7.1
+      helm list
+     ```
+
+    * ![helm](./images/helm1.png)
+     
   
 
 
