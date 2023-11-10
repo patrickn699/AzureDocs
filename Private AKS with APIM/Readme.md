@@ -26,7 +26,13 @@ you should get the following output for deployments and service.
 
 ![deployments](./images/nginx2.png)
 
-2. 
+2. Install basic container image on AKS
+   * Head to yml_files folder and apply the demo.yml file which will pull and deploy basic image and expose it as ClusterIP.
+
+  ![img_deployments](./images/aksimg1.png)
+
+  ![img_deployments](./images/aksimg2.png)
+  
 
 
 
