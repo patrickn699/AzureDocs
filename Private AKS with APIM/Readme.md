@@ -65,6 +65,15 @@ you should get the following output for deployments and service.
 
     * ![helm](./images/helm1.png)
     * ![helm](./images/certm1.png)
+
+
+5. Create ClusterIssure and self-signed Certificate
+     * Now its time to crate the certificate, go the yml_files folder and apply selfi.yml followed by cert.yml.
+     * you should see the below output once created
+       
+     * ![issuer](./images/issuer1.png)
+     * ![cert](./images/cert1.png)
+
      
   
 
