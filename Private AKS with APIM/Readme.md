@@ -20,7 +20,13 @@ helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-basic
 kubectl get deployments && kubectl get svc
 
 ```
+you should get the following output for deployments and service.
 
+![deployments](./images/nginx1.png)
+
+![deployments](./images/nginx2.png)
+
+2. 
 
 
 
