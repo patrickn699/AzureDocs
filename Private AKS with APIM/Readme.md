@@ -35,8 +35,8 @@ you should get the following output for deployments and service.
 
 
 3. Create Ingress route
-  * In order to access these deployments through ingress we need to create routes so that the incomming traffic can reach the demo service.
-  * Head to yml_files folder and apply ingress.yml file.
+    * In order to access these deployments through ingress we need to create routes so that the incomming traffic can reach the demo service.
+    * Head to yml_files folder and apply ingress.yml file.
   
 
 
