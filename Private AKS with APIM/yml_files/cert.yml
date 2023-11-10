@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: selfsigned-crt
+spec:
+  secretName: tlss-secret-aks
+  issuerRef:
+    kind: ClusterIssuer
+    name: selfsigned-issuer
+  commonName: "ingresspvtaks.9d4226bf-19be-4b4f-8bfc-10cb64afde86.privatelink.eastus.azmk8s.io"
+  dnsNames:
+  - "ingresspvtaks.9d4226bf-19be-4b4f-8bfc-10cb64afde86.privatelink.eastus.azmk8s.io"
+  
+  
