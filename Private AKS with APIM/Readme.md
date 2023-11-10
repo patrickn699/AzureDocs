@@ -69,10 +69,24 @@ you should get the following output for deployments and service.
 
 5. Create ClusterIssure and self-signed Certificate
      * Now its time to crate the certificate, go the yml_files folder and apply selfi.yml followed by cert.yml.
-     * you should see the below output once created
+     * you should see the below output once created.
        
      * ![issuer](./images/issuer1.png)
      * ![cert](./images/cert1.png)
+
+6. Create A record
+     * Create an A record in private dns zone of aks with the private ip of ingress controller
+     * for ex. ingresspvtaks.9d4226bf-19be-4b4f-8bfc-10cb64afde86.privatelink.eastus.azmk8s.io.
+
+7. Redeploy ingress
+     * Now we need to redeploy the ingress adding the following specs to each route.
+     * This will start referring to the secret where the certs are installed.
+     * ```yaml
+       tls:
+        - hosts:
+          - ingresspvtaks.9d4226bf-19be-4b4f-8bfc-10cb64afde86.privatelink.eastus.azmk8s.io
+          secretName: tlss-secret-aks
+       ```
 
      
   
