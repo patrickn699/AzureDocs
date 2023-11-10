@@ -29,14 +29,20 @@ you should get the following output for deployments and service.
 2. Install basic container image on AKS
    * Head to yml_files folder and apply the demo.yml file which will pull and deploy basic image and expose it as ClusterIP.
 
-  ![img_deployments](./images/aksimg1.png)
+    ![img_deployments](./images/aksimg1.png)
 
-  ![img_deployments](./images/aksimg2.png)
+    ![img_deployments](./images/aksimg2.png)
 
 
 3. Create Ingress route
     * In order to access these deployments through ingress we need to create routes so that the incomming traffic can reach the demo service.
-    * Head to yml_files folder and apply ingress.yml file.
+    * Head to yml_files folder and apply ingress.yml file & run kubectl describe ingress.
+  
+    * ![ing_deployments](./images/ingress1.png)
+    * ![ing_deployments](./images/ingress2.png)
+    * If everything is correctly installed you should be able to access it using the private ip of the ingress.
+  
+    * ![op_deployments](./images/op1.png)
   
 
 
