@@ -32,6 +32,11 @@ you should get the following output for deployments and service.
   ![img_deployments](./images/aksimg1.png)
 
   ![img_deployments](./images/aksimg2.png)
+
+
+3. Create Ingress route
+  * In order to access these deployments through ingress we need to create routes so that the incomming traffic can reach the demo service.
+  * Head to yml_files folder and apply ingress.yml file.
   
 
 
