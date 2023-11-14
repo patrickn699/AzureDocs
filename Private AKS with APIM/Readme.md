@@ -128,7 +128,9 @@ you should get the following output for deployments and service.
     * Lastly head to "api" blade and edit the backend of the api, replace the url will https and add "Gateway Credentials" as "client certificate" from the dropdown select the uploaded certificate in the previous steps and click on save. Also go to "settings" in "api" blade and replace the url with 'https' click on save.
       *  ![apic](./images/apic4.png)
       *  ![apic](./images/apic5.png)
-
+    * Now we should be able to call the aks service with https
+        *  ![apic](./images/apio1.png)
+        *  ![apic](./images/apio2.png)
 
   
 
