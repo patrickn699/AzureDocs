@@ -118,6 +118,16 @@ you should get the following output for deployments and service.
         openssl pkcs12 -export -out cet.pfx -inkey ../tls.pem -in ../ca.pem -> enter a password and keep it safe
       
       ```
+    * Save the .pfx key locally and head to apim assuming you already have configured the http api for aks service.
+    * Go to "custom domains" blade in apim and select the existing domain, tick the box "Negotiate Client Certificate" and click update.
+      *  ![apic](./images/apic1.png)
+    * Then its time to upldad the certificate, head to "certificates" blade and click on add certificate option, select custom certificate and upload the certificate .pfx file from local machinea and put the password. Once done click on save.
+      *  ![apic](./images/apic2.png)
+    * As we are using self signed certificates, the apim will throw 500 internal error as its not verified by authority. To bypass this go to "backend" blade select the "properties" option add 'https' to the backend url and un-tick "validate certificate chain" & "validate certificate name".
+      *  ![apic](./images/apic3.png)
+    * Lastly head to "api" blade and edit the backend of the api, replace the url will https and add "Gateway Credentials" as "client certificate" from the dropdown select the uploaded certificate in the previous steps and click on save. Also go to "settings" in "api" blade and replace the url with 'https' click on save.
+      *  ![apic](./images/apic4.png)
+      *  ![apic](./images/apic5.png)
 
 
   
