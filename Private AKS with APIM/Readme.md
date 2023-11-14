@@ -87,8 +87,17 @@ you should get the following output for deployments and service.
           - ingresspvtaks.9d4226bf-19be-4b4f-8bfc-10cb64afde86.privatelink.eastus.azmk8s.io
           secretName: tlss-secret-aks
        ```
+8. Download and install the ingress certificate
+     * After redeploying ingress, inorder for browsers to access it service via https we need to download and install the certificates on you local machine so we will be having the private key to check the signature of the certificate.
+     * To download the certificate run the below commands
+           * ```kubectl
+               kubectl get secret -o jsonpath="{.data['ca\.crt']}"
+               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of the above command")) | Set-Content -Path ca.crt
+               kubectl get secret -o jsonpath="{.data['tls\.key']}"
+               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of the above command")) | Set-Content -Path tls.key
+             ```
+           * Once we have saved it locally in windows os it needs to be installed
 
-     
   
 
 
