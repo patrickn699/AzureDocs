@@ -89,14 +89,25 @@ you should get the following output for deployments and service.
        ```
 8. Download and install the ingress certificate
      * After redeploying ingress, inorder for browsers to access it service via https we need to download and install the certificates on you local machine so we will be having the private key to check the signature of the certificate.
-     * To download the certificate run the below commands
-           * ```kubectl
+     *  To download the certificate run the below commands
+     *  
+       ```kubectl
                kubectl get secret -o jsonpath="{.data['ca\.crt']}"
-               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of the above command")) | Set-Content -Path ca.crt
+               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of  the above command")) | Set-Content -Path ca.crt
                kubectl get secret -o jsonpath="{.data['tls\.key']}"
-               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of the above command")) | Set-Content -Path tls.key
-             ```
-           * Once we have saved it locally in windows os it needs to be installed
+               [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("repace this part with base 64 output of    the above command")) | Set-Content -Path tls.key
+       ```
+       * Once we have saved it locally in windows os it needs to be installed.
+         *  ![dwcert](./images/dicert1.png)
+         *  ![dwcert](./images/tkey.png)
+       *  Click on the downloaded cert to install, then select install, select local machine, select browse and click on trusted root certificate authority.
+         * ![dwcert](./images/dicert2.png)
+         * ![dwcert](./images/dicert3.png)
+         * ![dwcert](./images/dicert4.png)
+       * Next up, we should be able to see the certificate in the browser like shown below.
+         * ![vcert](./images/vcert.png)
+       * If you are able to see the certificate this means https is enabled to the ingress but you will see it in the red as 'not secured' which means even tough its https but the certificate signature is not signed/validate by a certificate authority. 
+
 
   
 
