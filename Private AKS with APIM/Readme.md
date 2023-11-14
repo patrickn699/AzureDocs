@@ -134,11 +134,13 @@ you should get the following output for deployments and service.
           
 9.1  Disable public network access for AKS
      * as our aks is private but there might be public network access enabled for it, to verify use the below command.
-     
-     ```
+
+     ``` az
           az resource show --ids "aks id"
           az resource update --ids "aks id" --set properties.publicNetworkAccess=disabled
      ```
+     
+    
 
   
 
