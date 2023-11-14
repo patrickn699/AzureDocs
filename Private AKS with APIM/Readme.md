@@ -106,7 +106,18 @@ you should get the following output for deployments and service.
          * ![dwcert](./images/dicert4.png)
        * Next up, we should be able to see the certificate in the browser like shown below.
          * ![vcert](./images/vcert.png)
-       * If you are able to see the certificate this means https is enabled to the ingress but you will see it in the red as 'not secured' which means even tough its https but the certificate signature is not signed/validate by a certificate authority. 
+       * If you are able to see the certificate this means https is enabled to the ingress but you will see it in the red as "not secured" which means even tough its https but the certificate signature is not signed/validate by a certificate authority.
+
+9. Adding certificates to APIM
+    * Till now we are able to call the ingress with https through the browser of the vm in the sam vnet. But we also need to invoke it through APIM.
+    * And to invoke it thorugh APIM we also the certificate to ensure authenticity of the APIM backend and the ingress url as "https" one.
+    * Before addding certificates to the APIM we need the certificates to be in the format of .pfx. To do the same run the below commands. But make sure you have OpenSSL installed on your local machine where the certificates are saved.
+    * ```
+        openssl x509 -in ca.crt -out ../ca.pem
+        openssl rsa -in tls.key -out ../tls.pem
+        openssl pkcs12 -export -out cet.pfx -inkey ../tls.pem -in ../ca.pem -> enter a password and keep it safe
+      
+      ```
 
 
   
